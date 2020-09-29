@@ -1,6 +1,7 @@
 require 'pry'
 
 class Artist
+
   attr_accessor :name, :songs
 
   @@song_count = 0
@@ -9,12 +10,7 @@ class Artist
     @name = name
     @songs = []
   end
-  
-  def songs
-    Song.all.select do |song|
-      song.artist == self
-  end
-  
+
   def add_song(song)
     @songs << song
     song.artist = self
